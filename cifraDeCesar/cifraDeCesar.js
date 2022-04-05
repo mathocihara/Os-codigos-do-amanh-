@@ -1,10 +1,25 @@
+//select
+var selecao = document.getElementById('codigo'); // aqui está o select para
+var valor = selecao.options[selecao.selectedIndex].value;
+
+function dinamicaDoSelect(){
+    var selecao = document.getElementById('codigo'); // aqui está o select para
+    var opcoes = selecao.options[selecao.selectedIndex].value;
+
+  console.log(opcoes);
+}
+  //text
 var textoCriptrografar = document.getElementById('text'); // texto que vai ser criptografado
-var textoDescriptografado = document.getElementById('resultado'); // area do texto criptografado 
-var shift = document.getElementById('numeral'); // numeros que serão usado para o cifra de cesar
-// var selecao = document.getElementById('codigo'); 
+//botões
 var codificar = document.getElementById('codificar'); // selecao que codifica o texto
 var decodificar = document.getElementById('decodificar'); // selecao que descodifica o texto
+//saida do text
+var textoDescriptografado = document.getElementById('resultado'); // area do texto criptografado 
+//numeros para a cifra de cesar
+var shift = document.getElementById('numeral'); // numeros que serão usado para o cifra de cesar
+// botao de enviar
 
+//matrix para a criptografia
 var Alfabeto = [
     'A', 'B', 'C', 'D', 'E', 'F',
     'G', 'H', 'I', 'J', 'K', 'L',

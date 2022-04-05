@@ -13,10 +13,10 @@
     <form>
         <section>
             <div id="tipoDeCdg">
-                <select name="codigo" id="codigo">
-                    <option value="cesar">Cifra</option>
-                    <option value="Base64" >Base64</option>
-                    <option value="Escolha" selected>Escolha o Código</option>
+                
+                <select name="codigo" id="codigo" onChange="dinamicaDoSelect()">
+                    <option value="codigo01">Cifra</option>
+                    <option value="codigo02" >Base64</option>
                 </select>
             </div>
             <div id="texto">
@@ -31,7 +31,7 @@
             </div>
             <div id="resultado">
             <textarea name="resultao" id="resultado" cols="20" rows="10"></textarea>
-            <input type="submit" value='resultado' id="botao" onclick="criptografiaDeCesar()">
+            <input type="button" value='resultado' id="botao" onclick="mathzinhu()">
 <!-- por que o botão não está rodando -->
         </div>
             <div>
@@ -41,6 +41,6 @@
         </section>
     </form>
 </main>
-<script src="./page/java.js"></script>
+<script src="./cifraDeCesar/cifraDeCesar.js"></script>
 </body>
 </html>
