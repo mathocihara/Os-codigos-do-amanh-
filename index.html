@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,50 +8,59 @@
     <link rel="stylesheet" href="./page/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"><body>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
     <title>Criptografia</title>
-  </head>
+</head>
     <body>
-    
+
         <main>
-    <form>
-        <section>
-            <div id="tipoDeCdg">
-                
-                <select name="codigo" id="codigo" onChange="dinamicaDoSelect()">
-                    <option value="codigo01">Cifra</option>
-                    <option value="codigo02" >Base64</option>
-                </select>
-            </div>
-            <br>
-            <div id="texto">
-                <label for ='nome'>CARTA</label>
-                <br><br>
-                <textarea name="texto" type="text" id="text"></textarea>
-            </div>
-            <br>
-            <div id="botões">
-                <label for="codificar">CODIFICAR</label>
-                <input type="radio" id="codificar" name="cdg">
-                <label for="decodificar">DECODIFICAR</label>
-                <input type="radio" id="decodificar" name="cdg">
-            </div>
-            <br>
-            <div id="resultado">
-            <textarea name="resultao" id="resultado" cols="20" rows="10"></textarea>
-            </div>
-            <br>
-            <div id="botãof">
-<!-- por que o botão não está rodando -->
-        </div>
-        <br>
-            <div>
-                <label>Shift:</label>
-    <input type='number' id="numeral" name='shift' value='5' min='1' max='26'>
-            </div>
-        </section>
-    </form>
-</main>
-<script src="./cifraDeCesar/cifraDeCesar.js"></script>
-</body>
+            <form>
+                <section>
+                    <div id="tipoDeCdg">
+
+                        <select name="codigo" id="codigo" onChange="dinamicaDoSelect()">
+                            <option value="codigo01">Cifra</option>
+                            <option value="codigo02">Base64</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div id="texto">
+                        <label for='nome'>CARTA
+                            <br><br>
+                            <textarea name="texto" type="text" id="text"></textarea>
+                        </label>
+                    </div>
+                    <br>
+                    <div id="botões">
+                        <label for="codificar">CODIFICAR
+                            <input type="radio" id="codificar" name="cdg" />
+                        </label>
+                        <label for="decodificar">DECODIFICAR
+                            <input type="radio" id="decodificar" name="cdg" />
+                        </label>
+
+
+                    </div>
+                    <br>
+                    <div id="resultado">
+                        <textarea name="resultao" id="resultado" cols="20" rows="10"></textarea>
+                    </div>
+                    <br>
+                    <div id="botãof">
+                        <!-- por que o botão não está rodando -->
+                    </div>
+                    <br>
+                    <div>
+                        <label>Shift:</label>
+                        <input type='number' id="numeral" name='shift' value='5' min='1' max='26'>
+                    </div>
+                </section>
+            </form>
+        </main>
+        <script src="./cifraDeCesar/cifraDeCesar.js"></script>
+    </body>
+
 </html>
