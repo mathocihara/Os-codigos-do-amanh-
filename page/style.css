@@ -1,18 +1,18 @@
-main{
+main {
     display: flex;
     width: 100%;
     height: 100%;
 
 }
 
-form{
+form {
     display: flex;
     width: 100%;
     height: 100%;
     justify-content: flex-end;
 }
 
-body{
+body {
     display: flex;
     background-image: url('../imagens/background.jpg');
     background-size: 900px;
@@ -20,9 +20,10 @@ body{
 
 }
 
-section{
+section {
     display: flex;
-    width: 25%;
+    flex-wrap: wrap;
+    width: 30%;
     height: 100%;
     padding: 15px;
     margin-top: 120px;
@@ -31,16 +32,15 @@ section{
     flex-direction: column;
     border-radius: 10px;
     box-shadow: 0px 1px 30px black;
-    background-image: linear-gradient(130deg,#8538F2, #140840 );
+    background-image: linear-gradient(130deg, #8538F2, #140840);
     font-family: 'Press Start 2P', cursive;
 }
 
-textarea{
+#botões {
     display: flex;
-    width: 300px;
-    height: 100px;
-    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* quero alinhar eles */
 }
-
-
-
