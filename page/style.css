@@ -15,8 +15,8 @@ form {
 body {
     display: flex;
     background-image: url('../imagens/background.jpg');
-    background-size: 900px;
-    background-position: center;
+    background-size: 998px;
+    background-position: left;
 
 }
 
@@ -36,6 +36,20 @@ section {
     font-family: 'Press Start 2P', cursive;
 }
 
+ #tipoDeCdg{
+     display: flex;
+     justify-content: center;
+    }
+select{
+    display: flex;
+    width: 30%;
+    height: 35px;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    border-radius: 7px;
+    box-shadow: 0px 0px 20px black;
+
+}
 #botões {
     display: flex;
     width: 100%;
@@ -44,3 +58,4 @@ section {
     flex-wrap: wrap;
     /* quero alinhar eles */
 }
+
