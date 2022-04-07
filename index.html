@@ -19,43 +19,43 @@
         <main>
             <form>
                 <section>
-                    <div id="tipoDeCdg">
+                    <div id="tipoDeCripto">
 
-                        <select name="codigo" id="codigo" onChange="dinamicaDoSelect()">
-                            <option value="codigo01">Cifra</option>
-                            <option value="codigo02">Base64</option>
+                        <select name="cripto" id="cripto" onChange="CriptoEscolhida()">
+                            <option value="">-</option>
+                            <option value="cifraCesar">Cifra</option>
+                            <option value="base64">Base64</option>
                         </select>
                     </div>
                     <br>
-                    <div id="texto">
-                        <label for='nome'>CARTA
-                            <br><br>
-                            <textarea name="texto" type="text" id="text"></textarea>
+                    <div id="cxTexto">
+                        <label for='textoInser'>CARTA
+                            <br>
+                            <textarea class="caixa" name="texto" type="text" id="textoInser"></textarea>
                         </label>
                     </div>
                     <br>
-                    <div id="botões">
-                        <label for="codificar">CODIFICAR
-                            <input type="radio" id="codificar" name="cdg" />
+                    <div id="escolhaDoBtn">
+                        <label for="criptoBtn">CRIPTOGRAFAR
+                            <input type="radio" id="criptoBtn" name="bntcodificacao" />
                         </label>
-                        <label for="decodificar">DECODIFICAR
-                            <input type="radio" id="decodificar" name="cdg" />
+                        <label for="descriptoBtn">DESCRIPTOGRAFAR
+                            <input type="radio" id="descriptoBtn" name="bntcodificacao" />
                         </label>
-
-
                     </div>
                     <br>
-                    <div id="resultado">
-                        <textarea name="resultao" id="resultado" cols="20" rows="10"></textarea>
+                    <div id="cxResultado">
+                        <textarea class="caixa" name="texto" id="textoFinal" cols="20" rows="10"></textarea>
                     </div>
                     <br>
                     <div id="botãof">
                         <!-- por que o botão não está rodando -->
                     </div>
                     <br>
-                    <div>
-                        <label>Shift:</label>
-                        <input type='number' id="numeral" name='shift' value='5' min='1' max='26'>
+                    <div id="numDaSubsti">
+                        <label for="subistiletra">Escolha um número:
+                        <input type='number' id="substiletra" name='substiletra' value='' min='1' max='26'>
+                        </label>
                     </div>
                 </section>
             </form>
