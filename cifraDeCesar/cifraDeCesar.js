@@ -8,57 +8,44 @@ var nmbChave = document.getElementById('nmbChave'); // criei uma variavel que va
 // declaração das variaveis que receberão os valores selecionados
 var criptoSelecionada = '';
 var textoCartaEscrito = '';
-var AcaoSelecionada = '';
-var textoFinal = '';
-var ChaveSelecionada = '';
+var acaoSelecionada = '';
+var chaveSelecionada = '';
 
+// declaração do alfabeto para a Cifra de Cesar
+var alfabeto = [
+  "a","b","c","d","e","f","g","h"
+  ,"i","j","k","l","m","n","o","p"
+  ,"q","r","s","t","u","v","w","x"
+  ,"y","z"
+];
 
-//essa funcao ira captar a opção de escolha de criptografi do usuario e mostrar no console log 
-function CriptoEscolhida() {
-  //instanciação de variavel
+// a funcao vai receber os elementos html e armazenar seus respectivos valores para preparar a criptografia ou descriptografia do texto finl
+function PrepararCarta() {
+  // utilizamos as variaveis dos elementos para obter seus valores
   criptoSelecionada = selectCripto.options[selectCripto.selectedIndex].value;
+  textoCartaEscrito = txtCarta.value;
+  chaveSelecionada = nmbChave.value;
 
-  console.log(criptoSelecionada);
-}
-
-
-//cxtexto = vou pegar o texto que o usuario me der e fazer uma verificaçao das palavras para poder substituir 
-//na caixa de texto vamos ter uma frase feita pelo usuario, para ser criptografada
-
-
-
-function textoCriptografico() {
-  var textParaCripto = txtCarta.value;
-  console.log(textParaCripto)
-}
-
-
-
-//escolhaDoBtn
-var btnDefinido = '';
-
-function decisaoDoBotao() {
-  btnDefinido = escolha.value;
-  console.log(btnDefinido);
-}
+  for( i = 0; i < rdAcao.length; i++){
+    if(rdAcao[i].checked){
+      acaoSelecionada = rdAcao[i].value;
+      break;
+    }
+  }
+  
+  if(criptoSelecionada == '' && 
+    textoCartaEscrito == '' &&  
+    chaveSelecionada == '' && 
+    acaoSelecionada == ''){ 
+      alert('Por favor, preencha os campos');
+      return 0;
+  }
+  
+  if(criptoSelecionada == "cifraCesar"){
+                  
+  } 
 
 
-//cxResultado
 
-//matrix para a criptografia
-
-function textoCriptografico() {
-  var textParaCripto = textoPosto.value;
-  console.log(textParaCripto)
-}
-
-//numDaSubsti
-var numDeSubsti = '';
-
-function teste() {
-  numeroDeSubsti = numero.value;
-  console.log(numDeSubsti);
 
 }
-
-//botao
