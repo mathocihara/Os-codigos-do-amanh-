@@ -14,53 +14,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
     <title>Criptografia</title>
 </head>
-    <body>
 
-        <main>
-            <form>
-                <section>
-                    <div id="tipoDeCdg">
+<body>
 
-                        <select name="codigo" id="codigo" onChange="dinamicaDoSelect()">
-                            <option value="codigo01">Cifra</option>
-                            <option value="codigo02">Base64</option>
+    <main>
+        <form>
+            <section>
+                <div id="cxTipoDeCripto">
+                    <label for="selectCripto"> CRIPTOGRAFIA
+                        <select name="cripto" id="selectCripto" onchange="avaliacaoCripto()">
+                            <option value="">-</option>
+                            <option value="cifraCesar">Cifra</option>
+                            <option value="base64">Base64</option>
                         </select>
-                    </div>
-                    <br>
-                    <div id="texto">
-                        <label for='nome'>CARTA
-                            <br><br>
-                            <textarea name="texto" type="text" id="text"></textarea>
-                        </label>
-                    </div>
-                    <br>
-                    <div id="botões">
-                        <label for="codificar">CODIFICAR
-                            <input type="radio" id="codificar" name="cdg" />
-                        </label>
-                        <label for="decodificar">DECODIFICAR
-                            <input type="radio" id="decodificar" name="cdg" />
-                        </label>
-
-
-                    </div>
-                    <br>
-                    <div id="resultado">
-                        <textarea name="resultao" id="resultado" cols="20" rows="10"></textarea>
-                    </div>
-                    <br>
-                    <div id="botãof">
-                        <!-- por que o botão não está rodando -->
-                    </div>
-                    <br>
-                    <div>
-                        <label>Shift:</label>
-                        <input type='number' id="numeral" name='shift' value='5' min='1' max='26'>
-                    </div>
-                </section>
-            </form>
-        </main>
-        <script src="./cifraDeCesar/cifraDeCesar.js"></script>
-    </body>
+                    </label>
+                </div>
+                <br><br>
+                <div id="cxChave" class="invisivel">
+                    <label for="nmbChave"> CHAVE
+                        <input type='number' id="nmbChave" name='nmbChave' value="" min='1' max='26'>
+                    </label>
+                </div>
+                <br>
+                <div id="cxCarta">
+                    <label for='txtCarta'>CARTA
+                        <br><br>
+                        <textarea class="caixa" name="texto" type="text" id="txtCarta" cols="40" rows="5"></textarea>
+                    </label>
+                </div>
+                <br>
+                <div id="cxEscolhaAcao">
+                    <label for="rdCripto">CODIFICAR
+                        <input type="radio" id="rdCripto" name="rdAcao" value="cripto" onclick="popup('C')"/>
+                    </label>
+                    <label for="rdDescripto">DECODIFICAR
+                        <input type="radio" id="rdDescripto" name="rdAcao" value="descripto" onclick="popup('D')"/>
+                    </label>
+                </div>
+                <br>
+                <div id="btnPreparar">
+                    <input type="button" id="btnPreparar" value="Preparar Carta" onclick="PrepararCarta()">
+                </div>
+                <br>
+                <div id="cxResultado">
+                    <label for="txtFinal">CARTA FINAL
+                        <br><br>
+                        <textarea class="caixa" name="texto" id="txtFinal" cols="40" rows="5"></textarea>
+                    </label>
+                </div>
+                <br>
+            </section>
+        </form>
+    </main>
+    <script src="./cifraDeCesar/cifraDeCesar.js"></script>
+</body>
 
 </html>
