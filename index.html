@@ -20,9 +20,9 @@
     <main>
         <form>
             <section>
-                <div id="tipoDeCripto">
+                <div id="cxTipoDeCripto">
                     <label for="selectCripto"> CRIPTOGRAFIA
-                        <select name="cripto" id="selectCripto">
+                        <select name="cripto" id="selectCripto" onchange="avaliacaoCripto()">
                             <option value="">-</option>
                             <option value="cifraCesar">Cifra</option>
                             <option value="base64">Base64</option>
@@ -30,8 +30,8 @@
                     </label>
                 </div>
                 <br><br>
-                <div id="chave">
-                    <label for="nmbChave"> CHAVE:
+                <div id="cxChave" class="invisivel">
+                    <label for="nmbChave"> CHAVE
                         <input type='number' id="nmbChave" name='nmbChave' value="" min='1' max='26'>
                     </label>
                 </div>
@@ -43,12 +43,12 @@
                     </label>
                 </div>
                 <br>
-                <div id="escolhaAcao">
+                <div id="cxEscolhaAcao">
                     <label for="rdCripto">CODIFICAR
-                        <input type="radio" id="rdCripto" name="rdAcao" value="cripto" />
+                        <input type="radio" id="rdCripto" name="rdAcao" value="cripto" onclick="popup('C')"/>
                     </label>
                     <label for="rdDescripto">DECODIFICAR
-                        <input type="radio" id="rdDescripto" name="rdAcao" value="descripto" />
+                        <input type="radio" id="rdDescripto" name="rdAcao" value="descripto" onclick="popup('D')"/>
                     </label>
                 </div>
                 <br>

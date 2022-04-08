@@ -4,6 +4,7 @@ var txtCarta = document.getElementById('txtCarta'); // criei uma variavel para r
 var rdAcao = document.getElementsByName('rdAcao'); // criei uma radio button que vai receber o elemento 'btncodificacao'
 var txtFinal = document.getElementById('txtFinal'); // criei uma variavel que vai receber o elemento textarea'txtFinal'
 var nmbChave = document.getElementById('nmbChave'); // criei uma variavel que vai receber o elemento number 'nmbChave'
+var cxChave = document.getElementById('cxChave');
 
 // declaração das variaveis que receberão os valores selecionados
 var criptoSelecionada = '';
@@ -13,10 +14,7 @@ var chaveSelecionada = 0;
 
 // declaração do alfabeto para a Cifra de Cesar
 var alfabeto = [
-  'a','b','c','d','e','f','g','h'
-  ,'i','j','k','l','m','n','o','p'
-  ,'q','r','s','t','u','v','w','x'
-  ,'y','z'
+  'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
 ];
 //
 var novosChar = [];
@@ -26,59 +24,74 @@ function PrepararCarta() {
   // utilizamos as variaveis dos elementos para obter seus valores
   criptoSelecionada = selectCripto.options[selectCripto.selectedIndex].value;
   textoCartaEscrito = txtCarta.value;
-  chaveSelecionada = parseInt(nmbChave.value); 
+  chaveSelecionada = parseInt(nmbChave.value);
 
-  for( i = 0; i < rdAcao.length; i++){
-    if(rdAcao[i].checked){
+  for (i = 0; i < rdAcao.length; i++) {
+    if (rdAcao[i].checked) {
       acaoSelecionada = rdAcao[i].value;
       break;
     }
   }
-  
-  if(criptoSelecionada == '' && 
-    textoCartaEscrito == '' &&  
-    chaveSelecionada == '' && 
-    acaoSelecionada == ''){ 
-      alert('Por favor, preencha os campos');
-      return 0;
+
+  if (criptoSelecionada == '' &&
+    textoCartaEscrito == '' &&
+    chaveSelecionada == '' &&
+    acaoSelecionada == '') {
+    alert('Por favor, preencha os campos');
+    return 0;
   }
-  
-  if(criptoSelecionada == "cifraCesar"){
-    if( acaoSelecionada == 'cripto'){
-      for(i= 0; i < textoCartaEscrito.length; i++){
-        if( textoCartaEscrito[i] != ' '){
-          for(j = 0; j < alfabeto.length; j++){
-            if(textoCartaEscrito[i] == alfabeto[j] ){
-              novosChar[i] = alfabeto[(j+chaveSelecionada)%alfabeto.length]
+
+  if (criptoSelecionada == "cifraCesar") {
+    if (acaoSelecionada == 'cripto') {
+      for (i = 0; i < textoCartaEscrito.length; i++) {
+        if (textoCartaEscrito[i] != ' ') {
+          for (j = 0; j < alfabeto.length; j++) {
+            if (textoCartaEscrito[i] == alfabeto[j]) {
+              novosChar[i] = alfabeto[(j + chaveSelecionada) % alfabeto.length]
             }
           }
+        } else {
+          novosChar[i] = ' ';
         }
-        else {
+      }
+    } else {
+      for (i = 0; i < textoCartaEscrito.length; i++) {
+        if (textoCartaEscrito[i] != ' ') {
+          for (j = 0; j < alfabeto.length; j++) {
+            if (textoCartaEscrito[i] == alfabeto[j]) {
+              novosChar[i] = alfabeto[(j - chaveSelecionada)];
+            }
+          }
+        } else {
           novosChar[i] = ' ';
         }
       }
     }
-    else{
-      for(i= 0; i < textoCartaEscrito.length; i++){
-        if( textoCartaEscrito[i] != ' '){
-          for(j = 0; j < alfabeto.length; j++){
-            if(textoCartaEscrito[i] == alfabeto[j] ){
-              novosChar[i] = alfabeto[(j-chaveSelecionada)];
-            }
-          }
-        }
-        else {
-          novosChar[i] = ' ';
-        }
-      }   
-    }
     txtFinal.value = novosChar.join("");
   } else {
-    if( acaoSelecionada == 'cripto'){
+    if (acaoSelecionada == 'cripto') {
       txtFinal.value = btoa(textoCartaEscrito);
-    }
-    else{
+    } else {
       txtFinal.value = atob(textoCartaEscrito);
     }
+  }
+}
+
+function avaliacaoCripto() {
+  var tipoCripto = selectCripto.options[selectCripto.selectedIndex].value;
+
+  if (tipoCripto == "cifraCesar") {
+    cxChave.classList.remove("invisivel");
+  } else {
+    cxChave.classList.add("invisivel");
+  }
+}
+
+function popup(tipo) {
+  if (tipo == 'C') {
+    alert("Codificar Mensagem!")
+  }
+  if (tipo == 'D') {
+    alert("Decodificar Mensagem!")
   }
 }
