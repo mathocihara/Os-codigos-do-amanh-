@@ -25,8 +25,8 @@ var novosChar = [];
 function PrepararCarta() {
   // utilizamos as variaveis dos elementos para obter seus valores
   criptoSelecionada = selectCripto.options[selectCripto.selectedIndex].value;
-  textoCartaEscrito = txtCarta.value.toLowerCase();
-  chaveSelecionada = nmbChave.value; 
+  textoCartaEscrito = txtCarta.value;
+  chaveSelecionada = parseInt(nmbChave.value); 
 
   for( i = 0; i < rdAcao.length; i++){
     if(rdAcao[i].checked){
@@ -45,7 +45,6 @@ function PrepararCarta() {
   
   if(criptoSelecionada == "cifraCesar"){
     if( acaoSelecionada == 'cripto'){
-      console.log('criptografando...');
       for(i= 0; i < textoCartaEscrito.length; i++){
         if( textoCartaEscrito[i] != ' '){
           for(j = 0; j < alfabeto.length; j++){
@@ -60,7 +59,6 @@ function PrepararCarta() {
       }
     }
     else{
-      console.log('descriptografando...');
       for(i= 0; i < textoCartaEscrito.length; i++){
         if( textoCartaEscrito[i] != ' '){
           for(j = 0; j < alfabeto.length; j++){
@@ -72,25 +70,15 @@ function PrepararCarta() {
         else {
           novosChar[i] = ' ';
         }
-
       }   
     }
-
-
     txtFinal.value = novosChar.join("");
-    
   } else {
     if( acaoSelecionada == 'cripto'){
       txtFinal.value = btoa(textoCartaEscrito);
-      
     }
     else{
       txtFinal.value = atob(textoCartaEscrito);
-      
     }
-
   }
-
-
-
 }

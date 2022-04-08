@@ -66,6 +66,5 @@ input[type=number]{
     height: 100%;
     flex-direction: column;
     flex-wrap: wrap;
-    /* quero alinhar eles */
 }
 
